@@ -1,19 +1,14 @@
-import { Stack, Redirect } from "expo-router";
-import { useAuth } from '@clerk/expo';
+// app/_layout.tsx
 import '@/global.css';
+import { ClerkProvider } from '@clerk/expo';
+import { Stack } from 'expo-router';
 
-export default function AuthLayout() {
-    const { isSignedIn, isLoaded } = useAuth();
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
-    // Wait for auth to load before rendering anything
-    if (!isLoaded) {
-        return null;
-    }
-
-    // Redirect to home if user is already signed in
-    if (isSignedIn) {
-        return <Redirect href="/(tabs)" />;
-    }
-
-    return <Stack screenOptions={{ headerShown: false }} />;
+export default function RootLayout() {
+  return (
+    <ClerkProvider publishableKey={publishableKey}>
+      <Stack screenOptions={{ headerShown: false }} />
+    </ClerkProvider>
+  );
 }
