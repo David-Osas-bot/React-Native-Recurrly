@@ -1,0 +1,47 @@
+[
+  {
+    "event": "user_signed_in",
+    "description": "User successfully signs in with email and password via Clerk",
+    "file": "app/(auth)/sign-in.tsx"
+  },
+  {
+    "event": "user_sign_in_failed",
+    "description": "User sign-in attempt failed with an error",
+    "file": "app/(auth)/sign-in.tsx"
+  },
+  {
+    "event": "user_signed_up",
+    "description": "User completes email verification and account creation via Clerk",
+    "file": "app/(auth)/sign-up.tsx"
+  },
+  {
+    "event": "user_sign_up_failed",
+    "description": "User sign-up attempt failed with an error",
+    "file": "app/(auth)/sign-up.tsx"
+  },
+  {
+    "event": "user_signed_out",
+    "description": "User signs out from the Settings screen",
+    "file": "app/(tabs)/settings.tsx"
+  },
+  {
+    "event": "subscription_expanded",
+    "description": "User expands a subscription card on the home screen to view details",
+    "file": "app/(tabs)/index.tsx"
+  },
+  {
+    "event": "subscription_collapsed",
+    "description": "User collapses an expanded subscription card on the home screen",
+    "file": "app/(tabs)/index.tsx"
+  },
+  {
+    "event": "subscription_details_viewed",
+    "description": "User opens the subscription detail screen",
+    "file": "app/subscriptions/[id].tsx"
+  },
+  {
+    "event": "subscription_created",
+    "description": "User creates a new subscription",
+    "file": "app/(tabs)/index.tsx"
+  }
+]
